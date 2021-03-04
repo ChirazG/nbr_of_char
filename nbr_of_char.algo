@@ -1,0 +1,26 @@
+ALGORITHM nbr_of_char
+VAR
+length, word, v, i : INTEGER;
+ch, ch1: STRING;
+BEGIN
+ length:=0;
+ word:=0;
+ v:=0;
+ i:=0;
+ ch1:="aeiouy"
+ Read(ch);
+ WHILE (ch[length]<>".") DO
+    length:= length+1;
+    IF (ch[length]=" " OR ch[length]=".") THEN
+        word:= word+1;
+    END_IF
+    FOR i FROM 0 TO 5 STEP DO
+        IF (ch[length]=ch[i]) THEN
+         v:=v+1;
+        END_IF
+    END_FOR
+ END_WHILE
+ Write(length);
+ Write(word);
+ Write(v);
+END
